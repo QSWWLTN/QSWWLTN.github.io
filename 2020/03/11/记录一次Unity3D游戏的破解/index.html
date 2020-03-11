@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>记录一次Unity3D游戏的破解 - QSWWLTN的博客</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="QSWWLTN,"> 
+    <meta name="description" content="目录
+1.简单的说下原因2.准备工作3.开始操作
+
+
+破解的前因后果:写这篇文章的时候我还是处在蝙蝠时代，被迫一直在家里，在家里又没有事情做只能去玩游戏然后我玩到了一个叫Eliminator的第三人,"> 
+    <meta name="author" content="QSWWLTN"> 
+    <link rel="alternative" href="atom.xml" title="QSWWLTN的博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">QSWWLTN的博客</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">记录一次Unity3D游戏的破解</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">记录一次Unity3D游戏的破解</h1>
+        <div class="stuff">
+            <span>三月 11, 2020</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><blockquote>
+<p>1.简单的说下原因<br>2.准备工作<br>3.开始操作</p>
+</blockquote>
+<hr>
+<h2 id="破解的前因后果"><a href="#破解的前因后果" class="headerlink" title="破解的前因后果:"></a>破解的前因后果:</h2><p>写这篇文章的时候我还是处在蝙蝠时代，被迫一直在家里，在家里又没有事情做只能去玩游戏然后我玩到了一个叫Eliminator的第三人称射击 <del>第一人称射击</del> 类型(玩过的都知道是什么类型的游戏) Unity3D的游戏，但是这个游戏射击手感太差了加上我怂所以服装一直没解锁完，这我受不了啊这个游戏服装就是本体啊!! 没解锁完不就和肚子痛然后厕所满了一样 <del>JOJO的奇妙比喻</del> 所以我开始动歪脑筋想去找到这个游戏的存档文件，但是找了一段时间一直没知道心态直接爆炸，干脆直接破解这个游戏算了 <del>人质是任务的关键，只要人质没了任务就完成了—FUZE</del> （因为太久没写了突然要素过多）。</p>
+<hr>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>首先了解下Unity3D游戏是怎么做的，Unity3D使用的编程语言是C#在破解前应该对C#有过了解，在Unity3D游戏中有个叫Assembly-CSharp.dll的文件位于你游戏根目录的/Data/Managed/文件夹中，这个文件是同等于有Main函数的.CPP文件一样的存在，所以我们就要从这里入手。</p>
+<p>使用的工具是dnSpy(用于反编译)和AssetStudioGUI(用于提取资源文件)，因为时间问题这2个工具请自己下载。</p>
+<hr>
+<h2 id="开始操作"><a href="#开始操作" class="headerlink" title="开始操作"></a>开始操作</h2><p>打开dnSpy工具选择你要破解的游戏中的Assembly-CSharp.dll文件打开会发现除了这个文件外还载入了其他的文件，那些文件一般是Unity3D的运行文件不用管，打开后界面大概是这样的:<br><img src="https://s2.ax1x.com/2020/03/11/8kmrAf.png" alt="dnSpy界面"></p>
+<p>打开Assembly-CSharp.dll文件会看见很多类，在Unity3D中是使用PlayerPrefs类来保存数据的所以我们可以通过搜索(按F3来搜索)这个类出现的位置来找到怎么保存存档的；我是想直接修改读取函数来做到破解，因为不管怎么样都要读取存档来获得数据那我干脆直接把金钱的值修改成一直99999999不就行了。</p>
+<p>通过寻找我找到了一个叫K_PlayControl的类<br><img src="https://s2.ax1x.com/2020/03/11/8km2cj.png" alt="dll文件展开"></p>
+<p>这里面使用了PlayerPrefs类，再次搜索我找到了具体的使用位置<br><img src="https://s2.ax1x.com/2020/03/11/8km0Bt.md.png" alt="函数展开"></p>
+<p>啊，这就简单了，我去Unity3D官网找到了PlayerPrefs类中的Get(string, int)函数和Set(string ,int)函数的使用方法，我阅读了这个类的代码大概了解了这个读取存档的流程接下来就可以修改文件了，右键这个类点修改类进行修改。</p>
+<p>因为这个如果只修改保存函数的话每次游戏都要死一次才能重新恢复到99999999太麻烦了，所以我就也修改了读取函数修改后大概是这样子<br><img src="https://s2.ax1x.com/2020/03/11/8kmRjs.png" alt="修改"></p>
+<p>修改完成后记得保存。</p>
+<p>现在，打开游戏随便买衣服吧<br><img src="https://s2.ax1x.com/2020/03/11/8k8Rv8.md.png" alt="修改成功"></p>
+<p>然后嘛，因为我不是在做游戏嘛，刚好要用到枪械的模型我就在想能不能把这里面的枪械模型搞出来。</p>
+<p>查了点资料大概知道Unity3D是怎么存放资源文件了，在游戏的/Data/文件夹中有一些后缀名是.assets的文件，这个文件就是资源文件了。<br><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1496847631,1862283153&fm=26&gp=0.jpg" alt=""></p>
+<p>在网上刚好有提取这个文件的过程我就去看了下AssetStudioGUI的用法。</p>
+<p>Unity3D的文件类型有</p>
+<blockquote>
+<p>AnimationClip （压缩的动画文件）<br>Font (字体文件)<br>Mesh (3D模型文件)<br>MonoBehaviour (序列化文件，用于定义同名的类生命周期)<br>Shader (材质渲染文件)<br>Texture2D (引擎显示图像文件)</p>
+</blockquote>
+<p>具体的使用方法没什么好说的，因为就和你打开文档一样这里就不讲了。</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="https://link.hhtjim.com/163/28814379.mp3">
+            </audio>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+<script src="/live2d/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2d/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2d/assets/shizuku.model.json"},"display":{"position":"right","width":220,"height":440},"mobile":{"show":false},"react":{"opacity":0.7},"log":false});</script></body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
