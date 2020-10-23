@@ -103,51 +103,24 @@
 </ul>
 </blockquote>
 <p>下载并且安装完Node.js后在命令行窗口中输入</p>
-<blockquote>
-<p><code>ndoe -v</code><br><code>npm -v</code></p>
-</blockquote>
-<p>如果有版本号出现就是安装成功了。在安装成功后打开命令行窗口输入</p>
-<blockquote>
-<p><code>npm install cnpm -g --registry=https://registry.npm.taobao.org</code></p>
-</blockquote>
-<p>来下载cnpm，下载成功后输入</p>
-<blockquote>
-<p><code>cnpm -v</code></p>
-</blockquote>
-<p>出现版本号后就可以输入</p>
-<blockquote>
-<p><code>cnpm install -g hexo-cil</code></p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ndoe -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<p>如果有版本号出现就是安装成功了。在安装成功后打开命令行窗口输入<br> <code>npm install cnpm -g --registry=https://registry.npm.taobao.org</code></p>
+<p>来下载cnpm，下载成功后输入<br><code>cnpm -v</code></p>
+<p>出现版本号后就可以输入<br><code>cnpm install -g hexo-cil</code></p>
 <p>来下载Hexo框架了。在下载完Hexo后打开GitBash输入</p>
-<blockquote>
-<p><code>cd ~</code><br><code>cd .ssh</code></p>
-</blockquote>
-<p>如果在本用户文件夹(就是你用户名的文件夹，在C:/用户中)中没有.shh文件夹请按住shift+右键，点在此次打开命令行窗口并输入</p>
-<blockquote>
-<p><code>mkdir .ssh</code></p>
-</blockquote>
-<p>创建好后切换到GitBash输入</p>
-<blockquote>
-<p><code>cd .ssh</code></p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">cd .ssh</span><br></pre></td></tr></table></figure>
+
+<p>如果在本用户文件夹(就是你用户名的文件夹，在C:/用户中)中没有.shh文件夹请按住shift+右键，点在此次打开命令行窗口并输入<br><code>mkdir .ssh</code></p>
+<p>创建好后切换到GitBash输入<br><code>cd .ssh</code></p>
 <p>切换到.ssh文件夹中输入</p>
-<blockquote>
-<p><code>git config --global user.name &quot;你创建Github的用户名&quot;</code><br><code>git config --global user.eamil &quot;你创建Github的邮箱&quot;</code></p>
-</blockquote>
-<p>操作完成后输入</p>
-<blockquote>
-<p><code>ssh-keygen -t rsa -C &quot;你创建Github的邮箱&quot;</code></p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;你创建Github的用户名&quot;</span><br><span class="line">git config --global user.eamil &quot;你创建Github的邮箱&quot;</span><br></pre></td></tr></table></figure>
+
+<p>操作完成后输入<br><code>ssh-keygen -t rsa -C &quot;你创建Github的邮箱&quot;</code></p>
 <p>输入后会要求输入SSH密钥名称直接回车就行了，然后是要求输入密码，那个密码就是你Github的密码。</p>
 <p>指令完成后打开.ssh文件夹，里面有个id_rsa.pub的文件，点开复制全部，然后登陆你Github账号后点击头像，下面有个Setting点击它，然后找到SSH密钥管理，新建一个密钥，第一个是密钥的名称，可以自己决定，然后在下面的那里输入你复制的内容，点击创建。</p>
-<p>打开GitBash，输入</p>
-<blockquote>
-<p><code>ssh -T git@github.com</code></p>
-</blockquote>
-<p>查看是否成功。<br>在上述操作完成后打开命令行窗口输入</p>
-<blockquote>
-<p><code>cnpm install hexo-deployer-git --save</code></p>
-</blockquote>
+<p>打开GitBash，输入<br><code>ssh -T git@github.com</code></p>
+<p>查看是否成功。<br>在上述操作完成后打开命令行窗口输入<br><code>cnpm install hexo-deployer-git --save</code></p>
 <p>来安装上传插件。</p>
 <p>其余的是Hexo的使用方法了，这里就不叙述了。</p>
 <h2 id="使用Markdown的感想"><a href="#使用Markdown的感想" class="headerlink" title="使用Markdown的感想"></a>使用Markdown的感想</h2><blockquote>
@@ -158,9 +131,8 @@
 </ul>
 <p>Markdown（简称MD）是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。文件后缀名是”.MD”。Markdown使用方法非常简单没有编程能力的一样可以轻松上手。</p>
 <p>来看一个Markdown片段:</p>
-<blockquote>
-<p><code>Holle Word</code><br><code>+ 123123</code><br><code>~~123123~~</code></p>
-</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> Holle Word</span><br><span class="line"> + 123123</span><br><span class="line">~~123123~~</span><br></pre></td></tr></table></figure>
+
 <p>实现的效果是这样的:<br>Holle Word</p>
 <ul>
 <li>123123<br><del>123123</del></li>
@@ -177,7 +149,7 @@
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
-                <source type="audio/mpeg" src="https://link.hhtjim.com/163/22765919.mp3,https://link.hhtjim.com/163/501467313.mp3,https://link.hhtjim.com/163/526464652.mp3">
+                <source type="audio/mpeg" src="https://link.hhtjim.com/163/22765919.mp3">
             </audio>
             
         </div>

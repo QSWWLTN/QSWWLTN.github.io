@@ -101,32 +101,17 @@ Live2D共有两个分支：Cubism（主要）和Euclid（已停止开发）。�
 <ul>
 <li>安装并使用</li>
 </ul>
-<p>Hexo框架是支持Live2D的使用的，打开命令行指令并切换到你博客的根目录输入</p>
-<blockquote>
-<p><code>npm install live2d-widget --save</code></p>
-</blockquote>
-<p>打开node_modules文件夹，如果存在live2d-widget文件夹就可以进行下一步了。确保命令行窗口位于博客的根目录下输入</p>
-<blockquote>
-<p><code>npm install live2d-widget-model-shizuku --save</code></p>
-</blockquote>
+<p>Hexo框架是支持Live2D的使用的，打开命令行指令并切换到你博客的根目录输入<br><code>npm install live2d-widget --save</code></p>
+<p>打开node_modules文件夹，如果存在live2d-widget文件夹就可以进行下一步了。确保命令行窗口位于博客的根目录下输入<br><code>npm install live2d-widget-model-shizuku --save</code></p>
 <p>下载模型，这里下载的模型是本博客使用的模型，如果觉得不好看或者想换成自己的老婆的话可以查看<a href="https://github.com/xiazeyu/live2d-widget-models" target="_blank" rel="noopener">https://github.com/xiazeyu/live2d-widget-models</a>来找到你想要的模型或者可以打开node_modules文件夹找到live2d-widget-model-shizuku文件夹修改里面的模型，如果你是下载了其他的模型，模型的名字就是对应的文件夹名称。</p>
 <p>修改完成后回到博客的根目录下创建一个文件夹，将node_modules文件夹中的live2d-widget和live2d-widget-shizuku文件夹复制/剪切到你新创建的文件夹中。</p>
 <p>在选择好模型后要修改Hexo的配置文件，配置文件位于你博客根目录中的_config.yml文件，打开这个文件在文件末尾或者随便你喜欢的位置添加以下代码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  enable: true</span><br><span class="line">  scriptFrom: local</span><br><span class="line">  pluginRootPath: live2d&#x2F; #这里是你创建的文件夹名称</span><br><span class="line">  pluginJsPath: lib&#x2F;</span><br><span class="line">  pluginModelPath: assets&#x2F;</span><br><span class="line">  tagMode: false</span><br><span class="line">  debug: false</span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-shizuku #这是模型文件夹的名称</span><br><span class="line">  display:  #这个标签是描述模型的位置</span><br><span class="line">    position: right</span><br><span class="line">    width: 200</span><br><span class="line">    height: 400</span><br><span class="line">  mobile:   #是否在手机用户访问的时候显示模型</span><br><span class="line">    show: true</span><br><span class="line">  react:</span><br><span class="line">    opacity: 0.7</span><br></pre></td></tr></table></figure>
 
 <p>其中width和height是你想让模型显示的大小，show是是否在手机上显示。其余的可以自己百度来配置，如果懒的话使用我的就行了。</p>
-<p>配置完成后并且确保命令行窗口在博客根目录下后在命令行窗口中输入</p>
-<blockquote>
-<p><code>hexo g</code></p>
-</blockquote>
-<p>来重新生成你的博客，生成完成后可以输入</p>
-<blockquote>
-<p><code>hexo s</code></p>
-</blockquote>
-<p>来本地查看博客，检查是否成功。在成功后可以输入</p>
-<blockquote>
-<p><code>hexo d</code></p>
-</blockquote>
+<p>配置完成后并且确保命令行窗口在博客根目录下后在命令行窗口中输入<br><code>hexo g</code></p>
+<p>来重新生成你的博客，生成完成后可以输入<br><code>hexo s</code></p>
+<p>来本地查看博客，检查是否成功。在成功后可以输入<br><code>hexo d</code></p>
 <p>来发布自己的博客。</p>
 <p>再此提醒下，因为你的模型是保存在Github上的所以模型加载需要时间。</p>
 

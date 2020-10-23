@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>UE4开发遇到的一些问题 - QSWWLTN的博客</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="QSWWLTN,"> 
+    <meta name="description" content="目录
+1.前言    2.FPS开发中遇到的问题
+
+
+前言
+有天无聊翻自己空间突然发现我好像还有个博客…
+
+啊，好久没写博客了，上次的博客都是3月份的了….最近因为无聊开始接触了下虚幻4引擎，学习了,"> 
+    <meta name="author" content="QSWWLTN"> 
+    <link rel="alternative" href="atom.xml" title="QSWWLTN的博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">QSWWLTN的博客</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">UE4开发遇到的一些问题</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">UE4开发遇到的一些问题</h1>
+        <div class="stuff">
+            <span>十月 23, 2020</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><blockquote>
+<p>1.前言<br>    2.FPS开发中遇到的问题</p>
+</blockquote>
+<hr>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>有天无聊翻自己空间突然发现我好像还有个博客…</p>
+</blockquote>
+<p>啊，好久没写博客了，上次的博客都是3月份的了….<br>最近因为无聊开始接触了下虚幻4引擎，学习了段时间后就开始开发自己的游戏了。</p>
+<p>刚开始的时候是使用虚幻引擎的蓝图系统来开发的，因为刚开始的时候对这个引擎的使用方法还不是很了解，所以就先用比较容易的蓝图来实验。<br>在了解使用方法后我采取了C++和蓝图共同开发模式，C++用于底层实现蓝图实现一些简单和重复的事情。</p>
+<p>打个比方如果我要调整一个模型的位置，如果使用C++就会导致模型位置固定或者很难修改，但是蓝图可以自由的可视化调整，但是如果我要实现一个换弹的计算，使用蓝图就会让逻辑十分难理解，C++就很清楚明了。</p>
+<p>再啰嗦几句，我现在制作的游戏预计到2021年下半年前应该可以做出DEMO,到时候欢迎来当小白鼠试验游戏BUG和游戏问题;</p>
+<hr>
+<h2 id="FPS开发中遇到的问题"><a href="#FPS开发中遇到的问题" class="headerlink" title="FPS开发中遇到的问题"></a>FPS开发中遇到的问题</h2><blockquote>
+<p>嗯，开发的道路真的艰辛啊….</p>
+</blockquote>
+<p>既然是使用引擎开发嘛，肯定会要使用API来开发嘛；<br>但是，我这边不是很建议去看中文官网的文档，中文官网文档真的太老了，老到什么程度呢？实例中使用的很多变量,函数其实很多都是已经废弃的，我在某个QQ群里遇见被某个变量或者函数搞到心态爆炸的人数起码有3-4个。</p>
+<p>所以嘛，这边推荐去看一个官方实例（指使用UE4引擎创建的那个模板）如果遇到不明白的地方可以去英文版的官方去找API。</p>
+<p>嗯…感觉说了点废话。</p>
+<p>那就说下我遇到的一些问题:</p>
+<hr>
+<h2 id="如何在世界动态的生成一个Actor"><a href="#如何在世界动态的生成一个Actor" class="headerlink" title="如何在世界动态的生成一个Actor"></a>如何在世界动态的生成一个Actor</h2><p>我感觉可能很多看中文官方实例的都卡在这个地方了，就是官方那个FPS教程；<br>我在这边说一个我自己的思路，首先建立一个子弹（或者其他的你要的）类，这个类继承Actor。这个子弹（或者其他什么东西）里我推荐只写与这个子弹相关的功能，比如打中人物造成的伤害就是由这个子弹来造成。<br>然后在你要生成Actor的函数中这样写</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">ABullets* Bullets;</span><br><span class="line">UWorld* const World &#x3D; GetWorld();       &#x2F;&#x2F;获得世界(在UE4中一个关卡可以理解成一个世界)</span><br><span class="line"></span><br><span class="line">if(World !&#x3D; nullptr)&#123;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;因为我是要让子弹从屏幕正中心发射的所以要获得摄像机位置和旋转</span><br><span class="line">    FVector CameraLocation;</span><br><span class="line">    FRotator CameraRotator;</span><br><span class="line">    GetWorld()-&gt;GetFirstPlayerController()-&gt;GetPlayerViewPoint(CameraLocation, CameraRotator);</span><br><span class="line">    FVector EndLocation &#x3D; CameraLocation + CameraRotator.Vector() * MaxRange &#x2F;*MaxRange是我设置的最大射程，变量类型是int*&#x2F; ;</span><br><span class="line"></span><br><span class="line">    if(!IsAim &#x2F;*IsAim是判断是否瞄准，变量类型为Bool*&#x2F;)&#123;</span><br><span class="line"></span><br><span class="line">        &#x2F;*Recoil是用于模拟枪械后坐力，变量类型为int*&#x2F;</span><br><span class="line">        float X &#x3D; (Recoil * -100) + ((Recoil * 100) * rand()) &#x2F; (float)(RAND_MAX + 1);</span><br><span class="line">        float Y &#x3D; (Recoil * -100) + ((Recoil * 100) * rand()) &#x2F; (float)(RAND_MAX + 1);</span><br><span class="line">        float Z &#x3D; ((Recoil * 10) * rand()) &#x2F; (float)(RAND_MAX + 1);         &#x2F;&#x2F;总不可能向下飘吧...</span><br><span class="line"></span><br><span class="line">        EndLocation.X +&#x3D; X;</span><br><span class="line">        EndLocation.Y +&#x3D; Y;</span><br><span class="line">        EndLocation.Z +&#x3D; Z;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;在世界中生成Actor</span><br><span class="line">    FActorSpawnParameters ActorSpawnParams;</span><br><span class="line">    ActorSpawnParams.SpawnCollisionHandlingOverride &#x3D; ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButDontSpawnIfColliding;</span><br><span class="line">    World-&gt;SpawnActor&lt;ABullets&gt;(Bullets-&gt;GetClass(), EndLocation, CameraRotation, ActorSpawnParams);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者可以使用这样的办法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">AActor* TempActor;</span><br><span class="line">ABullets* Bullets;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;要创建的Actor位置和旋转值</span><br><span class="line">MakeTransform MakeTransform_Return &#x3D; UKismetMathLibrary::MakeTransform(FVector(0.0, 0.0, 0.0), FRotator(0.0, 0.0, 0.0), FVector(1.0, 1.0, 1.0));</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;生成一个Actor，但不执行构建函数</span><br><span class="line">TempActor &#x3D; UGameplayStatics::BeginDeferredActorSpawnFromClass(this, ABullets::StaticClass(), MakeTransform_Return, ESpawnActorCollisionHandlingMethod::Undefined, this);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;在世界中生成Actor并调用构造函数</span><br><span class="line">Bullets &#x3D; CastChecked&lt;ABullets&gt;(GameStatics::FinishSpawningActor(TempActor, MakeTransform_Return), ECastCheckedType::NullAllowed);</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="自定义武器生成"><a href="#自定义武器生成" class="headerlink" title="自定义武器生成"></a>自定义武器生成</h2><p>这个问题我只能说是给个思路，因为我的方法有点复杂时间问题我就简单的说下，下次专门写一个文章来详细的告诉解决办法。</p>
+<p>我想说明的是要自定义生成枪械其实就是一个专门用来存放枪械的背包。<br>首先，要创建一个数据表来存放这个枪械的信息，比如这个枪械的类，子弹数量，枪械的模型地址。<br>然后在你要生成的时候调用构造函数，然后这个构造函数的形参要这个枪械模型的地址和子弹数，然后再将这个生成的枪械放到世界中并附加到你人物模型的插槽上。</p>
+<hr>
+<p>嗯….写了点感觉好像要说的有点多，要不我之后专门写一个来说明问题算了；</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><hr>
+<p>嘛，就先写这么多吧，其实这段时间学到的东西挺多的，我在想哪天做个系列教程好点，就当记录下吧方便以后忘记了还能重新看一边。</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="https://link.hhtjim.com/163/22765919.mp3">
+            </audio>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+<script src="/live2d/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2d/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2d/assets/shizuku.model.json"},"display":{"position":"right","width":220,"height":440},"mobile":{"show":false},"react":{"opacity":0.7},"log":false});</script></body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
